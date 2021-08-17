@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div class="box a">Snip codes</div>
+  
+    <div class="box d">
+      <h6>My NOTES : (add search capabilities HERE)</h6>&nbsp;
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <textarea rows="5" matInput placeholder="comment" formControlName="comment"></textarea>
+              </mat-form-field>
+              <button mat-raised-button color="accent">Submit</button>
+          </form> &nbsp;
+      <div *ngFor="let list of (commentInfos ? commentInfos : [])">
+        <h6>{{list?.username}}:</h6>
+        <p>{{list?.comment.comment}}</p>
+      </div>
+    </div>
+  
+    <div class="box f">Save your screen shots here</div>
+  </div>
