@@ -14,31 +14,31 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getTypeRequest(url) {
+  getTypeRequest(url: any) {
     return this.httpClient.get(this.REST_API_SERVER + url).pipe(map(res => {
       return res;
     }));
   }
 
-  postTypeRequest(url, payload) {
+  postTypeRequest(url: any, payload: any) {
     return this.httpClient.post(this.REST_API_SERVER + url, payload).pipe(map(res => {
       return res;
     }));
   }
 
-  getTypeRequestComment(url) {
+  getTypeRequestComment(url: any) {
     return this.httpClient.get(this.REST_API_COMMENT + url).pipe(map(res => {
       return res;
     }));
   }
 
-  postTypeRequestComment(url, payload) {
+  postTypeRequestComment(url: any, payload: any) {
     return this.httpClient.post(this.REST_API_COMMENT + url, payload).pipe(map(res => {
       return res;
     }))
   }
 
-  putTypeRequest(url, payload) {
+  putTypeRequest(url: any, payload: any) {
     return this.httpClient.put(this.REST_API_COMMENT + url, payload).pipe(map(res => {
       return res;
     }));

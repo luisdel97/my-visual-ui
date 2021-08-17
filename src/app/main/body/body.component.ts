@@ -4,7 +4,9 @@ import {AuthService} from '../../services/auth.service';
 import { UserInfo } from 'src/app/models/user/user';
 import { CommentInfo } from 'src/app/models/comment/comments';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { PostInfo } from 'src/app/models/post/post';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-body',
@@ -17,7 +19,7 @@ export class BodyComponent implements OnInit {
   form: FormGroup;
 
 
-  commentInfos: CommentInfo[] = [];
+  commentInfos: any = [];
   postInfos: string = '';
 
   constructor(
@@ -35,21 +37,29 @@ export class BodyComponent implements OnInit {
     this.getComment();
   }
 
-  getComment() {
-    this._api.getTypeRequestComment('/comments').subscribe((commentInfos: CommentInfo[]) => {
-      this.commentInfos = commentInfos.map((commentInfo: CommentInfo) => {
-        return commentInfo;
-      }).sort();
+  // getComment() {
+  //   this._api.getTypeRequestComment('/comments').subscribe((commentInfos: CommentInfo[]) => {
+  //     this.commentInfos = commentInfos.map((commentInfo: CommentInfo) => {
+  //       return commentInfo;
+  //     });
 
-    });
+  //   });
+  // }
+
+  getComment() {
+    return this._api.getTypeRequestComment('/comments').subscribe((data: {}) => {
+      this.commentInfos = data;
+    })
+
   }
+  
 
   get f() {
     return this.form.controls;
   }
 
   submit() {
-    this.onSbmit();
+    // this.onSbmit();
     this.refresh();
   }
 
@@ -57,18 +67,18 @@ export class BodyComponent implements OnInit {
     window.location.reload();
 }
 
-  onSbmit() {
-    const b = this.form.value;
-    console.log(b);
-    this._api.postTypeRequestComment('/comment/post', b).subscribe((postInfos: PostInfo) => {
-      this.postInfos = postInfos.comment;
-      if (postInfos) {
-        this._auth.setDataInLocalStorage('token', postInfos);
-      }
-      }, err => {
-        console.log(err);
-      }
-    );
-  }
+  // onSbmit() {
+  //   const b = this.form.value;
+  //   console.log(b);
+  //   this._api.postTypeRequestComment('/comment/post', b).subscribe((daa: PostInfo) => {
+  //     this.postInfos = postInfos.comment;
+  //     if (postInfos) {
+  //       this._auth.setDataInLocalStorage('token', postInfos);
+  //     }
+  //     }, err => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
 }
