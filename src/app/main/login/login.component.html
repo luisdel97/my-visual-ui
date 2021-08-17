@@ -1,1 +1,19 @@
-<p>login works!</p>
+<mat-card>
+  <mat-card-content>
+<div id="form_login">
+  <form class="login" [formGroup] = 'form' (ngSubmit) = 'login()'>
+
+    <label class="labelUser">Username</label>
+    <input type = 'text' class='name' formControlName = 'username' />
+
+    <label>Password</label>
+    <input type = 'password' class='password' formControlName = 'password' />
+    <div>
+      <button type ='submit' [disabled] = '!this.form.valid'>
+        Login
+      </button>
+    </div>
+  </form>
+</div>
+  </mat-card-content>
+</mat-card>
