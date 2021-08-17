@@ -1,0 +1,25 @@
+.user {
+    padding-right: 7%
+  }
+  
+  .imgagec {
+        width: 91%;
+        height: 25%;
+        margin-left: 2%;
+        margin-top: 7px;
+  
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+  
+  p {
+         width:100%;
+         text-align:right;
+         position: relative;
+         background-color: #6186A8;
+         color: azure;
+  }
+  
+  body {
+    margin: 40px;
+  }
+  
