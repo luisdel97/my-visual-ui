@@ -53,13 +53,12 @@ export class BodyComponent implements OnInit {
 
   }
   
-
   get f() {
     return this.form.controls;
   }
 
   submit() {
-    // this.onSbmit();
+     this.onSbmit();
     this.refresh();
   }
 
@@ -67,18 +66,18 @@ export class BodyComponent implements OnInit {
     window.location.reload();
 }
 
-  // onSbmit() {
-  //   const b = this.form.value;
-  //   console.log(b);
-  //   this._api.postTypeRequestComment('/comment/post', b).subscribe((daa: PostInfo) => {
-  //     this.postInfos = postInfos.comment;
-  //     if (postInfos) {
-  //       this._auth.setDataInLocalStorage('token', postInfos);
-  //     }
-  //     }, err => {
-  //       console.log(err);
-  //     }
-  //   );
-  // }
+onSbmit() {
+  const b = this.form.value;
+  console.log(b);
+  this._api.postTypeRequestComment('/comment/post', b).subscribe(() => {
+    this.postInfos;
+    if (this.postInfos) {
+      this._auth.setDataInLocalStorage('token', this.postInfos);
+    }
+    }, err => {
+      console.log(err);
+    }
+  );
+}
 
 }
