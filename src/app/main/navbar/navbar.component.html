@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <!-- <mat-icon (click)="sidenav.toggle()">trending_up</mat-icon> -->
+  
+      </button>&nbsp;
+      <h1>Simple TECH</h1>
+      <span class="menu-spacer"></span>
+  
+      <div class="navigation">
+        <a mat-button [routerLink]="'/memories'"> NAV 1</a>
+        <a mat-button [routerLink]="'/my-gallery'"> NAV 2</a>
+         <a mat-button [routerLink]="'/contacts'"> NAV 3</a>
+        <a mat-button [routerLink]="'/create-contact'"> About Me </a>
+  
+      </div>
+    </mat-toolbar-row>
+  
+  </mat-toolbar>
+  

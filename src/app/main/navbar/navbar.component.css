@@ -1,0 +1,30 @@
+h1 {
+    z-index: 1;
+    color: #f8fbfa5c;
+  }
+  
+  
+  
+  .mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button {
+        color: #efdddd;
+        font-size:  23px;
+        font-family:  Arial, sans-serif;;
+  
+  }
+  
+  .mat-toolbar-row, .mat-toolbar-single-row {
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 16px;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      white-space: nowrap;
+      z-index: 1;
+  
+      background: #2980b9;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  }
+  
