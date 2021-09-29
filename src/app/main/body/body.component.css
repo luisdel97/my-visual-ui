@@ -9,44 +9,13 @@
     filter: brightness(5%);
   }
   
-  /*p {*/
-  /*  width:98%;*/
-  /*  text-align:left;*/
-  /*  position: relative;*/
-  /*  color: #6186A8;*/
-  /*  font-size: small;*/
-  
-  /*}*/
-  h6 {
-    color: #655072;
-  ;
-    font-weight: 300;
-    font-size: 20px;
-    margin: 0px 0px 0px 0px;
-    line-height: 80%;
-    font-family:  'Droid serif', serif;
-  }
-  
-  
-  
-  p {font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 24px;
-    margin: 5px 14px 14px;
-    color: #7e8a96;
-    /*margin-left: 6%;*/
-  }
-  
-  
-  
   body {
     margin: 40px;
   }
   
   .wrapper {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 33% 35% 35%;
     grid-gap: 10px;
     color: #444;
     margin-top: -2%;
@@ -80,6 +49,8 @@
     color: #9da8b3;
     font-size: 15px;
     font-weight: 400;
+    height: 750px;
+    /* overflow: auto; */
   }
   
   .f {
@@ -88,29 +59,5 @@
     grid-row-start: 1;
     grid-row-end: 2;
     color: blue;
-  }
-  
-  
-  .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  
-  :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-    display: flex;
-    position: absolute;
-    top: .25em;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    color: #e4e3e3 !important;
-    margin-top: -3%;
   }
   

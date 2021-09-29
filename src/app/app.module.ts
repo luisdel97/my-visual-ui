@@ -27,6 +27,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommentComponent } from './main/body/comment/comment.component';
+import { MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     BodyComponent,
     NavbarComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    CommentComponent
 
   ],
   imports: [
@@ -61,7 +64,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatOptionModule,
     MatProgressSpinnerModule,
     ScrollingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSortModule
   ],
   providers: [
     {
