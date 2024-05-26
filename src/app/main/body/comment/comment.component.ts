@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserInfo } from 'src/app/models/user/user';
 import { CommentInfo } from 'src/app/models/comment/comments';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { PostInfo } from 'src/app/models/post/post';
 import { Observable } from 'rxjs';
@@ -18,7 +18,7 @@ import { MatSort } from '@angular/material/sort';
 export class CommentComponent implements OnInit {
   title = 'app-material2';
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
 
   commentInfos: any = [];
@@ -27,7 +27,7 @@ export class CommentComponent implements OnInit {
   constructor(
     private _api : ApiService,
     private _auth: AuthService,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
   ) {
 
     this.form = this.fb.group({
