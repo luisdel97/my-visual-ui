@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpEvent, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse, HttpInterceptor} from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse, HttpInterceptor } from '@angular/common/http';
 import { Observable, Subject, of, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';

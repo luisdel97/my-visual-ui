@@ -10,7 +10,7 @@ import { NavbarComponent } from './main/navbar/navbar.component';
 import { ProfileComponent } from './main/profile/profile.component';
 
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor-service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,50 +30,43 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommentComponent } from './main/body/comment/comment.component';
 import { MatSortModule} from '@angular/material/sort';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    BodyComponent,
-    NavbarComponent,
-    ProfileComponent,
-    LoginComponent,
-    CommentComponent
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatInputModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTableModule,
-    MatDividerModule,
-    MatSlideToggleModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatProgressSpinnerModule,
-    ScrollingModule,
-    MatFormFieldModule,
-    MatSortModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorService,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        BodyComponent,
+        NavbarComponent,
+        ProfileComponent,
+        LoginComponent,
+        CommentComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FormsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatInputModule,
+        MatCardModule,
+        MatMenuModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTableModule,
+        MatDividerModule,
+        MatSlideToggleModule,
+        MatSelectModule,
+        MatOptionModule,
+        MatProgressSpinnerModule,
+        ScrollingModule,
+        MatFormFieldModule,
+        MatSortModule], providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: InterceptorService,
+            multi: true
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
