@@ -7,7 +7,7 @@ import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { PostInfo } from 'src/app/models/post/post';
 import { Observable } from 'rxjs';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+//import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { MatSort } from '@angular/material/sort';
 
 @Component({
@@ -37,21 +37,21 @@ export class CommentComponent implements OnInit {
 
   ngOnInit(): void {
     this.getComment();
-  
+
   }
 
   getComment() {
     this._api.getTypeRequestComment('/comments').subscribe((commentInfos: CommentInfo[]) => {
       return this.commentInfos = commentInfos.sort((a, b) => {
         return <any>new Date (b.time) - <any>new Date (a.time)
-       
+
       });
     })
   }
- 
+
   get f() {
     return this.form.controls;
-    
+
   }
 
   submit() {
