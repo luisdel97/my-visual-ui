@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "auth-vazul-ui:build:production"
+              "buildTarget": "auth-vazul-ui:build:production"
             },
             "development": {
-              "browserTarget": "auth-vazul-ui:build:development"
+              "buildTarget": "auth-vazul-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "auth-vazul-ui:build"
+            "buildTarget": "auth-vazul-ui:build"
           }
         },
         "test": {
